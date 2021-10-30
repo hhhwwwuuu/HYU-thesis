@@ -1,0 +1,153 @@
+%\chapter{Background and \hspace*{4.8cm} Preliminaries}
+\setstretch{1.6} 
+\chapter{Background}
+\label{chapter2}
+\hspace*{0.4cm} 
+
+%\section{Background overview}
+
+In this chapter, we present an overview of software product line, feature model, feature-oriented domain analysis, feature-oriented reuse method, attribute feature model and optimization.
+
+\section{Software Product Line}
+SPL consists of the set of products that share common and variable features to satisfy the particular market requirements \cite{t40} as shown in fig. ~\ref{SPLProcess}. Organizations adopt the SPL to acquire the business objectives such as time-to-market development, low cost and increase the productivity \cite{t41, t42}.
+
+
+
+At the initial stage of SPL adoption, organizations need to specify their business objectives and scope of products to specify the common features that will be used as the core of every product and variation points that will differentiate each product of SPL \cite{t43, t44, t45}. Processes of SPL development are:
+
+\begin{itemize}
+	\item Domain Analysis and Engineering: This process is substitute a complete scope of specific SPL where organization finds the number of products before adoption to predict the development cost and benefits \cite{t46, t47}. In each product, the organization needs to identify the features that are required by the end user with different variation points \cite{t48}.
+	\item Domain Implementation: This is domain development process where all features are developed independently for the derivation of products \cite{t49}.
+	
+	\item Requirement Analysis: This process is for end-user requirements analysis. End-user specifies the functional (features to be selected) and non-functional (cost and efficient etc.) requirements for the product development. These requirements must be from the scope of SPL domain \cite{t50, t51}.
+	
+	\item Product Derivation: This process enables the final product derivation according to requirements of the end user. End-user selects the features from the domain that need to be part of product and developers to generate the product \cite{t52, t53}. Developers select the features and reuse them for every product derivation. Reusability of features make the product derivation cost-effective and time-to-market \cite{t54}.
+	
+\end{itemize}
+
+Two main processes of SPL are domain engineering and application engineering.
+
+\subsection{Domain Engineering}
+
+SPL domain engineering creates a platform where all features can be reused for the development of products \cite{t55} as shown in fig. ~\ref{DomainEng} \cite{tt59}. Reusable features are consist of common and variable features. Common features are always part of every product and variable features are used by the requirements of the end-user \cite{t56, t57, t58}. Therefore, the development of the SPL platform required the software development artifacts such as requirements, architecture, design, tests etc \cite{t59}.
+
+
+
+There are three main goals of domain engineering process, 1) define the common and variable features of SPL, 2) define the set of products that are planned to develop i.e. scope of SPL and 3) develop all reusable features that accomplish the required variability. Further, domain Engineers refine and give feedback about the variation points that are determined during the initial stage of domain engineering. There are five sub-processes of domain engineering.
+
+\subsubsection{Product Management}
+
+This process deals with the market strategy with economic aspects of SPL i.e. allocation of initial development cost, market benefits etc. The product portfolio of business unit is managed by the project management team. Product management team identifies about the compact scope of SPL i.e. what is under the scope and what is outside the scope. 
+
+Top management defines the goals of the company and gives input to project management. Further, the product management defines the road-map of SPL according to the variable and common features for the development of future products and the schedule plan for the release of the final product. Furthermore, project management defines the list products with variation points and artifacts that can be reused for the platform development.
+
+Project management of SPL differs from the single system product management due to the platform development that accomplishes the changes in features, constraints and set the standards for future product development from the same platform. 
+
+\subsubsection{Domain Requirements Engineering}
+
+Requirement elicitation and documenting them according to variable and common requirements of SPL is accomplished by the process of domain requirement engineering. The input of this process is the road-map that is determined by product management. The output contains reusable artifact, model-based and textual requirements and, in particular, the variability model of SPL. Furthermore, this process defines the attribute values for each feature. Therefore, the output does not contain requirements specification of the single product but common and variable functional and non-functional requirements of whole SPL.
+
+In this process, all requirements are specified according to common and variable features, common features must be part of every product and variable features for specific products (i.e. differentiate among several products).
+
+\subsubsection{Domain Design}
+
+This process encompasses all events for the development of reference architecture of SPL. Reference architecture defines the common and high-level abstraction for all SPL configurations. Domain requirement process provides the input of all common and variable features, rules, reusable artifacts and relationship between features. The output of this process provides the common reference architecture that consists of variability model i.e. SPL internal variability for all configuration but not specific for one product.
+
+In the single system, domain design indicates the single system, however, SPL domain design provides the reference architecture for all products that shares common and variable features i.e. family of software. Due to high flexibility, reference architecture can be reusable according to specific application requirement.
+
+\subsubsection{Domain Realization}
+
+This process provides the comprehensive design and implementation of reusable components. The input of this process is the list of reusable components that are determined by reference architecture for the development of products. The output is the complete design and implementation of reusable software artifacts.
+
+Domain realization of SPL differs from the single system due to loosely coupled features, configurable components. Each SPL feature is planned, designed in reference architecture and implemented in the context of reuse in multiple products of SPL.  
+
+\subsubsection{Domain Testing}
+
+Reusable components validate and verified by domain testing. This process tests the artifacts according to specifications (requirements), reference architecture and design components. Furthermore, reusable test artifacts developed by this process to reduce the effort of testing at application development. 
+
+Domain testing takes the input from domain requirements, domain design (reference architecture) domain realization (interface designs) and domain realization (designed and implementation of reusable components). The output defines the testing results according to the specification of all variable features. Domain testing does not apply on running application, however, project management provides an application for testing phase to check whether all relationships and rules are not violated. Testing starts from the single component to the chunks of common components that are integrated as dummy application.
+
+
+\subsection{Application Engineering}
+
+This process is responsible for deriving product line applications from the platform established in domain engineering \cite{t62, t63} as shown in fig. ~\ref{ApplicationEng} \cite{tt59}. It exploits the variability of product line and ensures the correct binding of the variable features according to the application's specific needs \cite{t64}.
+
+
+
+Main goals of this process are \cite{t65, t66}:
+\begin{itemize}
+	\item Enhance the reusability of domain asset artifacts during the development of a product.
+	\item Utilizing the variable and common artifacts of SPL  efficient way to increase the reusability during the product development.
+	\item Manage the application artifact according to domain engineering i.e requirements, design, components, test and implementation.
+	\item Manage the variability from domain engineering according to end-user requirements for application development.
+	\item identify the variation points for all products in the scope of SPL domain engineering.
+\end{itemize}
+
+\subsubsection{Application Requirement Engineering}
+
+This process gathers all the requirements that are required for the specific application development. Application requirements highly depend on the domain engineering requirements due to reuse of components and predefined scope of SPL. Therefore, the main concern is to detect the similarity of application requirements and domain engineering process for the high reusability of domain components. Domain requirement engineering provides the input of SPL scope and application engineering refines that requirements according to application specification that needs to be developed. Therefore, the output of this process is the requirements that are specified by end-user or market.
+
+Requirement elicitation team do not gather the requirements from scratch, end-users select the common and variable features from the domain according to relationship and constraints between features. If some concerned requirements are new from end-user then this process find the similarity of application requirements and domain requirements to calculate the effort. Later, these new requirements also become part of the domain to increase the reusability for next application development.
+
+\subsubsection{Application Design}
+
+This process provides the application architecture according to requirements from end-user and domain architecture. Reference architecture from the domain is the base of application architecture. Application architecture selects (variable components) the artifacts from reference architecture according to application specification and generates the architecture that meets the requirement specification of the desired application. 
+
+Application design takes the input from application requirement engineering and reference architecture to generate application specific architecture. This architecture indicates the final application requirements and specifications. The development of application architecture is not from the scratch, but develop it from reference architecture with the variable components. Variable components from domain create the difference between all application architectures. Therefore, application designers must be careful about the relationships that are defined by domain design in reference architecture for correct application development.
+
+\subsubsection{Application Realization}
+
+Reusable components need to identify in this process for the application development. As the reusable components are already assembled at domain realization process, therefore, it generates running application after assembling all components (common and variable).
+
+\subsubsection{Application Testing}
+
+This process validates and verifies the specifications of running application according to end-user requirements and domain level relationships between components. The inputs of this process are requirements from end-user, the relationship between components and reusable test suits that are defined at domain testing. 
+
+\section{Feature Model}
+Feature model is tree structure of all domain artifacts such as common and variable features. Common features are mandatory i.e. must be part of all SPL products \cite{t67, t68}. However, variable features are selected according to end-user requirements and specification of products. Feature model defines the pre-defined constraints and relationships among features \cite{t69}. Therefore, feature model is the compact picture of complete SPL scope where all features and their specifications need to be defined. Basic relationships between variable features are alternative, Or and optional \cite{t70, t71} as shown in fig. ~\ref{FM}.
+
+
+\begin{itemize}
+	\item Alternative: Only one feature need to be select i.e. one-to-one.
+	\item Or Group: More than one features can be select i.e. one-to-many.
+	\item Optional: Not necessary to be part of the product.
+\end{itemize}
+
+Furthermore, the extension of these relationships are defined as:
+
+\begin{itemize}
+	\item Mandatory alternative: Only one feature must be select i.e. one-to-one.
+	\item Optional alternative: Not necessary to be part of the product. However, if needs to be select then only one feature can be part of the product i.e. zero-to-one. 
+	\item Mandatory Or group: At least one feature must be part of product i.e. one-to-many.
+	\item Optional Or group: Not necessary to be part of product i.e. zero-to-many.  
+\end{itemize}
+
+Comprehensive analysis and information of feature model are essential for assets development of the product line, however, this information is not enough for product derivation \cite{t72}. Information related to binding features such as timing and relationship to include in specific products and delivered to stakeholders also the derivation of components in SPL \cite{t73}. Moreover, in product line assets, some features (bound features) must be provided at the time of development while, some of them (optional features) can be provided on the time of installation by the choice of costumer \cite{t74, t75}. These existing sets of features called as binding units (variability and commonalty units) which further utilized to identify the points of variation to achieve composition components easily for feature bindings. The timing units of feature binding are also influenced component design \cite{t76}. In case of when a feature (timing), the load table approach can be adopted for the component design, at the time of installation. It is, therefore, the components need to be designed for the provision of binding features when they are required.
+
+The terminal features are required to bind the derivation of new product from feature model by finding their combination \cite{t77}. It can be assumed that the development of a new product is successful if it fulfills all constraints which are defined by the feature model. The constraints which are governed by a feature model on terminal features are “And” (select all), “Or” (select few or all) and “Alternative” (select only one) groups \cite{t78, t79}.
+
+\subsection{Feature Oriented Domain Analysis (FODA)}
+
+FODA method proposed by Kyo C Kang in 1990, applied on domain engineering to model the domain artifacts into feature model \cite{t80}. Requirement analysis for specific product development is call domain analysis. It applies to the family of products rather than on single product development \cite{t81}. Effective domain analysis according to feature relationships and constraints enable the product development easy efficient on all products of SPL. It parameterizes the features for all products in the scope of SPL \cite{t82, tr83}.
+Domain analysis phases are shown in fig. ~\ref{FODA}.
+
+FODA supports the development of the family of software in a way:
+
+\begin{itemize}
+	\item Understanding the domain i.e. common and variable features and their binding relationship at the domain level.
+	\item Specifications of features for the development of applications i.e. requirement and scope of SPL.
+	\item Built the reusable resources such as design, domain realization, domain test suits etc.
+	\item Assisting the SPL processes for domain analysis creation and other reusable components. 
+\end{itemize}
+
+\subsection{Feature Oriented Reuse Method (FORM)}
+FORM method proposed by Kyo C Kang in 1998 is used to analyze the common and variable features to capture the differences of applications in domain engineering according to features combination \cite{t84}. Moreover, FORM supports the development of domain architecture and features by using the analysis results to increase the reusability \cite{t85}. Commonalities and variabilities are captured by feature model and reuse the domain architecture and developed features for the application development. By defining the features in terms of common and variable in domain engineering, reusability increased in application development \cite{t86}.  
+
+\subsection{Attribute Feature Model}
+Attribute feature model is the extension of feature model where all features are defined by the attribute values. In attribute feature model, every feature contains functional and non-functional quality attributes \cite{t87, t88}. Functional and non-functional requirements show the specification of every feature and describe the importance of application development. End-user selects the features for application development by analyzing the quality attributes of every feature \cite{t89}. Moreover, end-user enables to perceive the efficiency of application in advance according to requirements. Based on quality attributes, features are selected for product derivation according to the user requirements \cite{t90}. Figure ~\ref{Attribute} shows the attribute feature model with four quality attributes: cost, performance, CPU and memory.
+
+
+
+\section{Optimization}
+
+Optimization is the process to find optimum solutions from the set of solutions. In academia and software industry, it is common problem to get the optimum solutions according to different market requirements due to constraints and relationships among factors \cite{t91, t92}. To find the optimal solutions according to constraints and relationships, multiple heuristic based algorithms have been proposed such as genetic algorithm, NSGA, IBEA etc \cite{t93}. These are search base algorithms that evaluate the fitness (quality attributes) value of every possible solution according to given objective functions and compare them to find the non-dominated (minimized or maximized) solutions. MOEAs are commonly used to find the multi-objective optimum solutions in the software industry to search with respect to cost and performance etc. \cite{t94}.
