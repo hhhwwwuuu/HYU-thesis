@@ -50,10 +50,12 @@
 \let\defaultchapter\chapter
 \def\chapter{\@ifstar{\defaultchapter*}{\nochapter}}
 \newcommand{\nochapter}[1]{\defaultchapter{#1}}
-\titleformat{\chapter}{\normalfont\largefont\bfseries\filcenter}{\chaptertitlename\ \thechapter.\space}{0pt}{}
+\titleformat{\chapter}{\normalfont\largefont\bfseries\filright}{\chaptertitlename\ \thechapter.\space}{0pt}{}
+\titleformat{name=\chapter, numberless}{\normalfont\largefont\bfseries\filcenter}{}{0pt}{}
 \titleformat*{\section}{\titlelabel{\thesection\space}\bf\mediumfont}
 \titleformat*{\subsection}{\titlelabel{\thesubsection\space}\bf\subheadfont}
 \setlength{\parindent}{2em}
+\titlespacing*{\chapter}{0pt}{-1\baselineskip}{1em}
 
 
 
@@ -61,14 +63,7 @@
 % for insertion of 'contents', 'list of tables/figures', and 'bibliography' into TOC
 %\RequirePackage[titletoc,page]{appendix}
 \RequirePackage[nottoc]{tocbibind}
-%\RequirePackage[titles]{tocloft}
-%%% Format for Table of Contents
-%\renewcommand{\cftchapdotsep}{\cftdotsep}  %add dot separators
-%\renewcommand{\cftchapfont}{\bfseries}  %set title font weight
-%\renewcommand{\cftchappagefont}{}  %set page number font weight
-%\renewcommand{\cftchappresnum}{Chapter }
-%\renewcommand{\cftchapaftersnum}{.}
-%\renewcommand{\cftchapnumwidth}{5em}
+
 
 
 
@@ -160,11 +155,11 @@
 		\vspace{30mm}  \textbf{\largefont{\@submitdate}} \\
 		\vspace{25mm}
 		\begin{tabular}{lr}
-			\textbf{\largefont{Committee Chairman:}} & \largefont{\underline{\makebox[40mm][r]{\@firstreader}} \hspace{3mm}(Signature)}\\ \\
-			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][r]{\@secondreader}} \hspace{3mm}(Signature)}\\ \\
-			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][r]{\@thirdreader}} \hspace{3mm}(Signature)}\\ \\
-			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][r]{\@fourthreader}} \hspace{3mm}(Signature)}\\ \\
-			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][r]{\@fifthreader}} \hspace{3mm}(Signature)}\\ \\
+			\textbf{\largefont{Committee Chairman:}} & \largefont{\underline{\makebox[40mm][c]{\@firstreader}} \hspace{3mm}(Signature)}\\ \\
+			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][c]{\@secondreader}} \hspace{3mm}(Signature)}\\ \\
+			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][c]{\@thirdreader}} \hspace{3mm}(Signature)}\\ \\
+			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][c]{\@fourthreader}} \hspace{3mm}(Signature)}\\ \\
+			\textbf{\largefont{Committee Member:}} & \largefont{\underline{\makebox[40mm][c]{\@fifthreader}} \hspace{3mm}(Signature)}\\ \\
 		\end{tabular} \\
 		\vspace{\fill} \textbf{\largefont{Graduate School of Hanyang University}} \\
 		% 		\vspace{17.5mm}  \null
@@ -184,7 +179,7 @@
 
 
 \def\abstractpage{
-	\chapter*{Abstract}
+	\chapter*{\centering Abstract}
 	\begin{center}
 
 		\mediumfont\bfseries{\@title}
